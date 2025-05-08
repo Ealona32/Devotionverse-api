@@ -1,0 +1,54 @@
+<div class="container mt-4">
+    <h2>{{ devotion.id ? 'Edit' : 'Add' }} Devotion</h2>
+    <form (ngSubmit)="onSubmit()" #devotionForm="ngForm">
+      <div class="mb-3">
+        <label>Title</label>
+        <input
+          class="form-control"
+          name="title"
+          [(ngModel)]="devotion.title"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label>Text</label>
+        <textarea
+          class="form-control"
+          name="text"
+          [(ngModel)]="devotion.text"
+          required
+        ></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label>Date</label>
+        <input
+          type="date"
+          class="form-control"
+          name="date"
+          [(ngModel)]="devotion.date"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label>Category</label>
+        <input
+          class="form-control"
+          name="category"
+          [(ngModel)]="devotion.category"
+          required
+        />
+      </div>
+  
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!devotionForm.form.valid"
+      >
+        Save
+      </button>
+    </form>
+  </div>
+  

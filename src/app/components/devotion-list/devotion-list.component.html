@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <h2>All Devotions</h2>
+    <a class="btn btn-success mb-3" routerLink="/add">+ Add Devotion</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Text</th>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of devotions">
+          <td>{{ d.title }}</td>
+          <td>{{ d.text }}</td>
+          <td>{{ d.date | date }}</td>
+          <td>{{ d.category }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary me-2" (click)="edit(d.id)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="delete(d.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
